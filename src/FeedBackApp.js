@@ -9,6 +9,7 @@ export default function FeedBackApp() {
 
   //const feedbacks = feedbackData 
   const [feedbacks, setfeedbacks ] = useState(feedbackData)
+  const [editFeedItem, setEditFeedback] = useState()
 
   const [loading , setLoading]= useState(true)
   setTimeout(() => {
@@ -18,28 +19,40 @@ export default function FeedBackApp() {
   if (loading) return <h2>Loading .... </h2>
 
   const removeFeedBack = (feedbackId)=> {
-    console.log("feedback" + feedbackId)
-    setfeedbacks (feedbacks.filter((feed)=> feed._id !== feedbackId ))
+
+    if(window.confirm("Are you sure ?")){
+      setfeedbacks (feedbacks.filter((feed)=> feed._id !== feedbackId ))
+       console.log("feedback" + feedbackId)
+    }
   }
 
-  const createFeedback = (text)=>{
-    console.log('text')
+  const updatefeedback = (feedback)=> {
+    console.log(feedback)
+    setEditFeedback(feedback)
+    
+  }
+
+  const createFeedback = (newFeedback)=>{
+    /* console.log('text')
     let newFeedback = {
       _id : '6',
       text : text,
       rating : 10
-    }
+    } */
+    newFeedback._id = feedbacks?.length+1;
     setfeedbacks ([newFeedback, ...feedbacks])
   }
   return (
     <div>
       <Header title="FeedBack App" textColor="#ffea81" />
       <div className='container'>
-      <FeedBackForm  CreateFeed={createFeedback} />
+      <FeedBackForm  CreateFeed={createFeedback} editFeedItem={editFeedItem} />
       <FeedBackStats feedbacks={feedbacks} />
-      <FeedBackList feedbacks={feedbacks} deleteFeedback={removeFeedBack}  />
+      <FeedBackList feedbacks={feedbacks} deleteFeedback={removeFeedBack} editFeedback={updatefeedback}     />
+
       </div>
       
     </div>
   )
-}
+  }
+
