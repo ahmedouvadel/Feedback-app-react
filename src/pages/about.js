@@ -1,10 +1,20 @@
 import React from 'react'
-import Nav from '../components/Nav'
+import { useNavigate } from 'react-router-dom'
 
 function About() {
+
+  const navigate = useNavigate()
+
+  const ask = () => {
+    if(window.confirm('test')){
+      navigate('/feedback')
+    }
+  }
   return (
     <div>
-      <Nav></Nav>
+      About
+
+      <button onClick={ask} className='btn btn-secondary'>click</button>
     </div>
   )
 }

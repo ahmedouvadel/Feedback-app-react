@@ -5,8 +5,8 @@ function Nav() {
   return (
     <div className='container'>
       <div className='card'>
-        <Link to="/signin">Signin</Link>
-        <Link to="/feedback">Feedback</Link>
+        <Link to="/signin" activeclassename="active">Signin</Link>
+        <Link to="/feedback" activeclassename="active">Feedback</Link>
         <Link to="/about">about</Link>
       </div>
       

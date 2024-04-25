@@ -5,6 +5,9 @@ import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import FeedBackApp from './FeedBackApp';
 import About from './pages/about';
+import Details from './pages/Details';
+import Layout from './pages/Layout';
+import Nav from './components/Nav';
 
 function App() {
   return (
@@ -13,11 +16,18 @@ function App() {
       <BrowserRouter>
       <Routes>
         {/* redirection */}
-        <Route path="" element={<Navigate to={'/signin'} />} />
+        {/* <Route path="" element={<Navigate to={'/signin'} />} /> */}
+        <Route path="" element={<Navigate to={'/layout'} />} />
+        <Route path="/nav" element={<Nav />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/feedback" element={<FeedBackApp />} />
+        <Route path='layout' element={<Layout />} />
+        <Route path='' element={Layout}>
+        <Route path="/details" element={<Details />} /> 
         <Route path="/about" element={<About />} />
+        </Route>
+        
       </Routes>
       </BrowserRouter>
     </div>
