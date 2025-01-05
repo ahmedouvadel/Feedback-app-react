@@ -2,6 +2,8 @@ Description du Projet - Feedback App ⭐
 
 Technologies utilisées : React, JavaScript, HTML, CSS
 
+<img width="500" src="https://raw.githubusercontent.com/ahmedouvadel/Feedback-app-react/main/screenshots/img.png">
+
 Présentation 📝
 Le projet Feedback App est une application web développée avec React.js permettant aux utilisateurs d'évaluer un service et de laisser un avis. Cette application se concentre sur l'expérience utilisateur avec une interface propre et intuitive. Elle inclut des fonctionnalités comme la gestion des avis et le calcul de la note moyenne.
 
