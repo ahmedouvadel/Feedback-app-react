@@ -1,5 +1,5 @@
 Description du Projet - Feedback App ⭐
-Nom du Projet : Feedback App
+
 Technologies utilisées : React, JavaScript, HTML, CSS
 
 Présentation 📝
